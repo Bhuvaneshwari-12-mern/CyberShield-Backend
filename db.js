@@ -10,7 +10,7 @@ export const pool = mysql.createPool({
   password: process.env.CLOUD_DB_PASSWORD,
   database: process.env.CLOUD_DB_NAME,
   ssl: {
-    rejectUnauthorized: false 
+    rejectUnauthorized: false
   },
   waitForConnections: true,
   connectionLimit: 10,
