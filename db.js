@@ -4,13 +4,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const pool = mysql.createPool({
-  host: process.env.CLOUD_DB_HOST,
-  port: process.env.CLOUD_DB_PORT,
-  user: process.env.CLOUD_DB_USER,
-  password: process.env.CLOUD_DB_PASSWORD,
-  database: process.env.CLOUD_DB_NAME,
+  uri: process.env.DATABASE_URL,
   ssl: {
-    rejectUnauthorized: false 
+    rejectUnauthorized: false
   },
   waitForConnections: true,
   connectionLimit: 10,
