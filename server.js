@@ -28,12 +28,12 @@ app.get('/api/incidents', async (req, res) => {
         s.SeverityLevel as Severity, 
         t.SystemName as TargetSystem,
         f.Status
-      FROM FactIncidents f
-      JOIN DimDate d ON f.DateKey = d.DateKey
-      JOIN DimGeography g ON f.GeographyKey = g.GeographyKey
-      JOIN DimAttackType a ON f.AttackTypeKey = a.AttackTypeKey
-      JOIN DimSeverity s ON f.SeverityKey = s.SeverityKey
-      JOIN DimTargetSystem t ON f.TargetSystemKey = t.TargetSystemKey
+      FROM factincidents f
+      JOIN dimdate d ON f.DateKey = d.DateKey
+      JOIN dimgeography g ON f.GeographyKey = g.GeographyKey
+      JOIN dimattacktype a ON f.AttackTypeKey = a.AttackTypeKey
+      JOIN dimseverity s ON f.SeverityKey = s.SeverityKey
+      JOIN dimtargetsystem t ON f.TargetSystemKey = t.TargetSystemKey
       ORDER BY d.FullDate DESC
       LIMIT 1000;
     `;
